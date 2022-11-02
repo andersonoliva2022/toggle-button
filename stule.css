@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #E7F2EF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+input[type="checkbox"] {
+    width: 200px;
+    height: 100px;
+    appearance: none;
+    background-color: #DAE2DF;
+    border-radius: 50px;
+   
+    cursor: pointer;
+
+    position: relative; /*faz a bola ficar se posicionar apenas em relação ao input */
+}
+
+/*antes / desligados */
+input[type="checkbox"]:before {
+    
+    /*Bola */
+    content: ''; 
+    width: 100px;
+    height: 100px;
+    background-color: #EDF3F1;
+    border-radius: 50%;
+
+    position: absolute; /*faz o elemento (bola) se sobresair */
+
+    -webkit-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 13px 2px rgba(0, 0, 0, 0.1);
+
+    transform: scale(1.1); /*aumenta o tamanho da bola */
+
+    top: 0;
+    left: 0;
+
+    transition: .6s;
+
+}
+
+input:checked[type="checkbox"] {
+    background-color: #3DECB1;
+    transition: .6s;
+}
+
+input:checked[type="checkbox"]:before{
+    left: 100px; /*cria uma margem esquerda no elemento dando a ilusão de movimento*/
+    transition: .6s;
+}
